@@ -11,7 +11,7 @@ class MyService : Service() {
     // onStartCommand()やonBind()の前に呼び出される．
     override fun onCreate() {
         super.onCreate()
-        Log.d(SERVICE_LOG, "onCreate()")
+        Log.d(SERVICE_LOG, "onCreate() @MyService")
     }
 
     // 他のコンポーネント（アクティビティなど）がサービスの開始をリクエストするためにstartService()を呼び出した時に呼び出される．
@@ -20,14 +20,14 @@ class MyService : Service() {
     // 逆に，サービスがstopSelf()を使って自身で停止するか，他のコンポーネントがstopService()を呼び出して停止するまでサービスは動作し続ける．
     // ただしAndroid 8.0（APIレベル26, Oreo)以降ではアプリがバックグラウンドに移行して1分ほどでサービスが停止してしまう．
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Log.d(SERVICE_LOG, "onStartCommand()")
+        Log.d(SERVICE_LOG, "onStartCommand() @MyService")
         return super.onStartCommand(intent, flags, startId)
     }
 
     // サービスが使用されなくなり破棄されるときに呼び出される．
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(SERVICE_LOG, "onDestroy()")
+        Log.d(SERVICE_LOG, "onDestroy() @MyService")
     }
 
     // 他のコンポーネントがサービスにバインドするためにbindService()を呼び出した時に呼び出される．
