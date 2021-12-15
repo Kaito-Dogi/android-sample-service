@@ -18,6 +18,7 @@ class MyService : Service() {
     // このメソッドが実行されるとサービスが開始され，バックグラウンドで無期限に動作出来る．
     // このメソッドを実行した場合，作業完了時にstopSelf()かstopService()を呼び出して自身でサービスを停止する必要がある．
     // 逆に，サービスがstopSelf()を使って自身で停止するか，他のコンポーネントがstopService()を呼び出して停止するまでサービスは動作し続ける．
+    // ただしAndroid 8.0（APIレベル26, Oreo)以降ではアプリがバックグラウンドに移行して1分ほどでサービスが停止してしまう．
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.d(SERVICE_LOG, "onStartCommand()")
         return super.onStartCommand(intent, flags, startId)
