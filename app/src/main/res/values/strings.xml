@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ServiceSample</string>
+    <string name="my_service_description">ServiceSampleのMyServiceです．</string>
 </resources>
