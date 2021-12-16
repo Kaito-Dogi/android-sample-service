@@ -11,9 +11,9 @@
         android:theme="@style/Theme.ServiceSample">
         <service
             android:name=".MyService"
+            android:description="@string/my_service_description"
             android:enabled="true"
-            android:exported="false"
-            android:description="@string/my_service_description"/>
+            android:exported="false" />
 
         <activity
             android:name=".MainActivity"
