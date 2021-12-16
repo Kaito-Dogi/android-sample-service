@@ -61,6 +61,6 @@ class MyService : Service() {
     }
 
     companion object {
-        private const val SERVICE_LOG = "serviceLog"
+        const val SERVICE_LOG = "serviceLog"
     }
 }
