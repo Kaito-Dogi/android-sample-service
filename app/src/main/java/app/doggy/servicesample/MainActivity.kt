@@ -16,14 +16,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.startButton.setOnClickListener {
             val myServiceIntent = Intent(this, MyService::class.java)
-            Log.d(MyService.SERVICE_LOG, "startService() @MainActivity")
             startService(myServiceIntent)
+            Log.d(MyService.SERVICE_LOG, "startService() @MainActivity")
         }
 
         binding.stopButton.setOnClickListener {
             val myServiceIntent = Intent(this, MyService::class.java)
-            Log.d(MyService.SERVICE_LOG, "stopService() @MainActivity")
             stopService(myServiceIntent)
+            Log.d(MyService.SERVICE_LOG, "stopService() @MainActivity")
         }
     }
 }

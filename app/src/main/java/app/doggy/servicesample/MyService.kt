@@ -24,8 +24,8 @@ class MyService : Service() {
         sheepBleat = MediaPlayer.create(this, R.raw.sheep_bleat)
         sheepBleat.isLooping = isLooping
         sheepBleat.setOnCompletionListener {
-            Log.d(SERVICE_LOG, "stopSelf() @MyService")
             stopSelf()
+            Log.d(SERVICE_LOG, "stopSelf() @MyService")
         }
     }
 
@@ -46,12 +46,11 @@ class MyService : Service() {
     // サービスが使用されなくなり破棄されるときに呼び出される．
     override fun onDestroy() {
         super.onDestroy()
+        Log.d(SERVICE_LOG, "onDestroy() @MyService")
 
         sheepBleat.stop()
         sheepBleat.reset()
         sheepBleat.release()
-
-        Log.d(SERVICE_LOG, "onDestroy() @MyService")
     }
 
     // 他のコンポーネントがサービスにバインドするためにbindService()を呼び出した時に呼び出される．
